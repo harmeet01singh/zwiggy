@@ -1,29 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-header{
-    height: 60px;
-    background-color: #f44336;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    position: relative;
-    box-shadow: 0px 2px 15px;
-}
-
-header > h2 {
-    margin: 20px;
-    color: white;
-}
-
 .image{
     grid-area: image;
-    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+    /* box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); */
     border-radius: 4px;
 }
 
@@ -35,16 +12,16 @@ header > h2 {
 
 .info{
     grid-area: info;
-    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+    /* box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); */
 }
 
-.info > *{
+.info > div{
     padding: 2rem;
 }
 
 .reviews{
     grid-area: reviews;
-    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+    /* box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); */
 }
 
 .reviews > *{
@@ -53,15 +30,11 @@ header > h2 {
 
 .container{
     display: grid;
-    justify-content: center;
-    align-items: ;
-    /* height: calc(100vh - 60px); */
     grid-template-areas: 
-    'image image info'
-    'image image reviews'
-    'image image reviews' ;
-    grid-gap: 5%;
-    margin: 10% 10% 0px 10%;
+    'image info'
+    'image reviews'
+    'image reviews' ;
+    margin: 5% 10% 0px 10%;
 }
 
 @media screen and (max-width: 1280px) {

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../Css/menu.css">
     <link rel="stylesheet" href="http://localhost/zwiggy/rprofile.css"/>
     <link rel="stylesheet" href="http://localhost/zwiggy/userprofile.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <title><?php echo $title; ?></title>
 </head>

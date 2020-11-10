@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-
-    <title>Item Name</title>
-</head>
-<body>
-    <header>
-        <h2>Zwiggy</h2>
-    </header>
+<?php
+    $title = 'Item Name';
+    include('../header.php');
+?>
     <div class="container">
         <img src="http://localhost/zwiggy/Frontend/User/images/itemImage.jpg" alt="item image" class="image">
         <div class="info">

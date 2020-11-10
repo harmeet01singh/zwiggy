@@ -317,6 +317,15 @@ img.loc{
            </br><a href="menu.php" class="btn3">order food</a>
 
            
+    <div class="image1">
+		<img src="http://localhost/zwiggy/images/landing1.jpg" alt="landing" class="landing">
+
+		<button onclick="document.getElementById('id01').style.display='block'" class="btn1">Login</button>
+		<button onclick="document.getElementById('id02').style.display='block'" class="btn2">register</button>
+	</div>
+
+            
+            
 
             </div>
             
