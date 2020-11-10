@@ -26,7 +26,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #ba000d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -40,7 +40,7 @@ button {
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #f44336;
+  background-color: #ba000d;
 }
 
 /* Center the image and position the close button */
@@ -48,10 +48,12 @@ button {
   text-align: center;
   margin: 24px 0 12px 0;
   position: relative;
+  cursor: pointer;
 }
 
 img.avatar {
-  width: 40%;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
 }
 
@@ -76,13 +78,14 @@ span.psw {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  cursor:pointer;
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 5px solid #888;
+  border: 2px solid #ba000d;
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
@@ -128,7 +131,7 @@ span.psw {
     img.landing{
 
         width:100%;
-        height:800px;
+        height:auto;
        
 
 
@@ -170,13 +173,13 @@ span.psw {
 }
 
 .container1{
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  background-color: #A9A9A9;
-  padding: 10px;
-  width:98.8%;
+  display:flex;
+  flex-direction:row;
+  background-color:#f44336 ;
+  padding:7px;
+  width:98.5%;
   height:300px;
-  min-width:5px;
+  
 
 }
 
@@ -187,13 +190,60 @@ span.psw {
   flex-direction:row;
   align-items:center;
   padding: 20px;
-  justify-content:center;
   margin:5px;
-  min-width:5px;
-  
+  justify-content:center;
+  width:33.33%;
+}
+
+@media (max-width: 600px) {
+
+  .container1{
+  display:flex;
+  flex-direction:column;
+  background-color:#f44336 ;
+  padding:7px;
+  width:100%;
+  height:100%;
+  margin:5px;
 
 }
 
+
+.container2{
+  background-color: white;
+  align-items:center;
+  padding:20px;
+  justify-content:center;
+  margin:5px;
+  width:90%;
+
+}
+
+img.image2{
+
+width:100%;
+height:100%;
+
+}
+
+
+
+
+}
+
+.image1{
+  background-image:url("http://localhost/zwiggy/images/landing1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100vh;
+  width:100vw;
+  display:flex;
+  
+  align-items:center;
+  justify-content:center;
+
+}
 
 
 
@@ -201,36 +251,84 @@ img.image2{
 
   width:100%;
   height:auto;
-
-
-
-  
   
 }
 
-        
-        
-    </style>
+.location{
+    height:30px;
+    width:100px;
+    }
+
+
+
+img.loc{
+  margin-top:8.1px;
+    width:40px;
+    height:40.9px;
+}
+
+.container3{
+  display:flex;
+  flex-direction:row;
+}
+
+.btn3{
+  background-color:#ba000d;
+  color:white;
+  padding:10px;
+  font-size:20px;
+  margin-left:5px;
+  margin-bottom:2px;
+
+}
+
+
+
+.signup{
+  position:absolute;
+  
+  right:0;
+ justify-content:right;
+  display:flex;
+  flex-direction:row;
+
+}
+
+
+
+</style>
 </head>
 <body>
+
+            <div class="signup">
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:100px; height:40px;float:right;background-color:#ba000d;margin-right:2px;">register</button>     
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:100px; height:40px;float:right;margin-right:2px;background-color:#ba000d">Login</button>
+            </div>
             
+
             <div class="image1">
-            <img src="http://localhost/zwiggy/images/landing1.jpg" alt="landing" class="landing">
-
-            <button onclick="document.getElementById('id01').style.display='block'" class="btn1">Login</button>
-
-            <button onclick="document.getElementById('id02').style.display='block'" class="btn2">register</button>
+           
             
+            <div class="container3">
+            <input type="text" placeholder="location" name="location">
+            <a href="menu.php"><img src="http://localhost/zwiggy/images/location.jpg" alt="location" class="loc"></a>
+            </div>
+
+           </br><a href="menu.php" class="btn3">order food</a>
+
+           
+
+            </div>
             
 
-            
+           
 
 <div id="id01" class="modal">
   
   <form class="modal-content animate" method="post">
     <div class="imgcontainer">
      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> 
-      <img src="http://localhost/zwiggy/images/login.png" alt="Avatar" class="avatar">
+      <img src="http://localhost/zwiggy/images/login.png" alt="" class="avatar">
     </div>
 
     <div class="container">
@@ -239,6 +337,8 @@ img.image2{
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
+
+    
 
       
         
@@ -324,7 +424,7 @@ img.image2{
 
     
 
-</div>
+
 
 <script>
 // Get the modal
