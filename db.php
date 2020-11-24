@@ -17,7 +17,7 @@ class DB
         if ($this->conn->connect_error) {
             echo "Connection failed: " . $this->conn->connect_error;
         }
-        echo "Connected successfully <br/>";
+        // echo "Connected successfully <br/>";
     }
 
     public function __destruct()

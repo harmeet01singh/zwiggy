@@ -1,3 +1,6 @@
+<?php 
+    require('../../../function.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +28,3 @@
             </ul>
         </div>
         <div class="main">
-            main
-        </div>
-    </div>
-</body>
-</html>

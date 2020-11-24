@@ -13,6 +13,7 @@ require('function.php');
 //   } else {
 //     echo "0 results";
 //   }
+
 ?>
 
 <html>
