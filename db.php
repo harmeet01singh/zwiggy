@@ -1,14 +1,40 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+class DB
+{
+  //Databse Connection
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    protected $servername = "localhost";
+    protected $username = "root";
+    protected $password = "password";
+    protected $dbname = "zwiggy";
+
+    public $conn = null;
+
+    public function __construct()
+    {
+        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
+        if ($this->conn->connect_error) {
+            echo "Connection failed: " . $this->conn->connect_error;
+        }
+        echo "Connected successfully <br/>";
+    }
+
+    public function __destruct()
+    {
+        $this->closeConnection();
+    }
+
+    protected function closeConnection()
+    {
+        if($this->conn != null)
+        {
+            $this->conn->close();
+            $this->conn = null;
+        }
+    }
 }
-echo "Connected successfully";
+
+
+    
 ?>
