@@ -6,7 +6,7 @@ class DB
 
     protected $servername = "localhost";
     protected $username = "root";
-    protected $password = "password";
+    protected $password = "";
     protected $dbname = "zwiggy";
 
     public $conn = null;

@@ -8,7 +8,7 @@ $users = $data->query('SELECT * FROM user');
 // print_r($users);
 
 ?>
-            <table>
+            <table id="table">
                 <tr>
                     <th>Email</th>
                     <th>Username</th>
@@ -26,6 +26,8 @@ $users = $data->query('SELECT * FROM user');
                 </tr>
                 <?php } ?>
             </table>
+            
+
         </div>
     </div>
 </body>
