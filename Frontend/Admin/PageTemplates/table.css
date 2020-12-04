@@ -1,12 +1,10 @@
 #table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%;
-    margin-top:22%;
-    margin-left:1%;
-    margin-right:1%;
-    margin-bottom:1%;
-
+    width: 83%;
+    position:absolute;
+    top:10%
+    
   }
   
   #table td, #table th {
