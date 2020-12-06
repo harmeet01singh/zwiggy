@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/header.css">
     <link rel="stylesheet" href="../Css/itemProfile.css">
     <link rel="stylesheet" href="../Css/menu.css">
-    <link rel="stylesheet" href="http://localhost/zwiggy/rprofile.css"/>
-    <link rel="stylesheet" href="http://localhost/zwiggy/userprofile.css"/>
+    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/rprofile.css"/>
+    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/userprofile.css"/>
+    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/reservation.css"/>
+    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/cart.css"/>
+    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/feedback.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
@@ -18,10 +21,10 @@
     <header>
         <h2>Zwiggy</h2>
         <ul class="nav">
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Reservations</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Cart</a></li>
+            <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/menu.php">Menu</a></li>
+            <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/reservation.php">Reservations</a></li>
+            <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/feedback.php">About us</a></li>
+            <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/cart.php">Cart</a></li>
         </ul>
 
         <button class="logout">Log Out</button>
