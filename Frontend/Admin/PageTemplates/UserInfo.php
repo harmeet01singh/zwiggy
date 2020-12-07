@@ -3,7 +3,7 @@
 $title="UserInfo";
 include("../sidebar.php");
 
-$users = $data->query('SELECT * FROM user');
+$users = $data->getData('SELECT * FROM user');
 
 // print_r($users);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

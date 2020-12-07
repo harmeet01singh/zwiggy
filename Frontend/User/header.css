@@ -5,7 +5,7 @@
 }
 
 header{
-    height: 60px;
+    height: 80px;
     background-color: #f44336;
     position: sticky;
     top: 0;
@@ -20,10 +20,11 @@ header{
     list-style: none;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav > li{
-    display: inline;
     padding: 0px 15px;
 }
 
@@ -31,6 +32,8 @@ header{
     text-decoration: none;
     color: white;
     font-size: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .logout{
@@ -57,7 +60,7 @@ header > h2 {
     color: white;
 }
 
-.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-18 { font-size: 20px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }

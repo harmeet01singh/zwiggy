@@ -1,8 +1,8 @@
 <?php
     require('db.php');
-    require('GetData.php');
+    require('Queries.php');
 
     $db = new DB();
 
-    $data = new GetData($db);
+    $data = new Queries($db);
 ?>
