@@ -1,3 +1,10 @@
+<?php 
+
+  require('../../../function.php');
+
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +48,24 @@
                 </a>
             </li>
         </ul>
+        
+       
 
+            <a href="http://localhost/zwiggy/landing.php" class="logout">logout</a>
+        
+        
+
+
+    </header>
+
+    
+
+<<<<<<< HEAD
         <button class="logout" style="display: flex;">
             <p>Log Out</p>
             <span class="material-icons">login</span>
         </button>
     </header>
+=======
+    
+>>>>>>> e565a61312dc5c9618c13f1cd9d4338c319cdcff
