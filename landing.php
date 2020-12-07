@@ -1,3 +1,5 @@
+ <?php include('./server.php');?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +12,15 @@
 <body>
 
   <div class="signup">
+    <a href="http://localhost/zwiggy/Frontend/User/PageTemplates/menu.php" style="width:100px; height:40px;float:right;background-color:#ba000d;margin-right:3px;margin-top:8.2px;text-align:center ;display:block;color:white;vertical-align:middle;">order food</a>
     <button onclick="document.getElementById('id02').style.display='block'" style="width:100px; height:40px;float:right;background-color:#ba000d;margin-right:2px;">register</button>     
     <button onclick="document.getElementById('id01').style.display='block'" style="width:100px; height:40px;float:right;margin-right:2px;background-color:#ba000d">Login</button>
   </div>
             
 
   <div class="container3">
-
-
-
-
-  
-    <input type="text1" placeholder="location" name="location">
-    <a href="menu.php"><img src="http://localhost/zwiggy/images/location.jpg" alt="location" class="loc"></a>
-    </br><a href="menu.php" class="btn3">order food</a>
-   
-
+    
+    
   </div>
 
     
@@ -35,33 +30,27 @@
 	</div>
 
             
-            
-
-            </div>
+  </div>
             
 
            
 
-<div id="id01" class="modal">
+<div id="id01"  class="modal">
   
-  <form class="modal-content animate" method="post">
+  <form class="modal-content animate" action="landing.php" method="post">
     <div class="imgcontainer">
      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> 
       <img src="http://localhost/zwiggy/images/login.png" alt="" class="avatar">
     </div>
 
     <div class="container">
-      <label for="usernamename"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="userid"><b>UserID</b></label>
+      <input type="text" placeholder="Enter Username" name="userid" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-    
-
+      <input type="password" placeholder="Enter Password" name="passwordd" required>
       
-        
-      <button type="submit">Login</button>
+      <button type="submit" name="login_user">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -78,7 +67,7 @@
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" method="post">
+  <form class="modal-content animate" action="landing.php" method="post">
     <div class="imgcontainer">
        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span> 
       <img src="http://localhost/zwiggy/images/login.png" alt="Avatar" class="avatar">
@@ -93,7 +82,7 @@
       <input type="text" placeholder="Enter Username" name="adduname" required>
 
       <label for="psw"><b>create Password</b></label>
-      <input type="password" placeholder="create Password" name="createpsw" required>
+      <input type="password" placeholder="create Password" name="addpassword" required>
 
       <label for="addingadd1"><b>Address_1</b></label>
       <input type="text" placeholder="Enter address_1" name="add_add1" required>
@@ -110,13 +99,13 @@
       <label for="addingacc"><b>Account Number</b></label>
       <input type="text" placeholder="Enter Bank Accno" name="add_acc" required>
 
-      
+     
 
       
 
       
         
-      <button type="submit">Register</button>
+      <button type="submit" name="reg_user">Register</button>
       </div>
     </form>
 
@@ -129,13 +118,13 @@
 
     
       <div class="container2">
-      <a href="#"><img src="http://localhost/zwiggy/images/fast.png" alt="fast" class="image2"></a>
+      <a href="http://localhost/zwiggy/Frontend/User/PageTemplates/cart.php"><img src="http://localhost/zwiggy/images/fast.png" alt="fast" class="image2"></a>
       </div>
       <div class="container2">
-      <a href="#"><img src="http://localhost/zwiggy/images/order.png" alt="fast" class="image2"></a>
+      <a href="http://localhost/zwiggy/Frontend/User/PageTemplates/menu.php"><img src="http://localhost/zwiggy/images/order.png" alt="fast" class="image2"></a>
       </div>
       <div class="container2">
-      <a href="#"><img src="http://localhost/zwiggy/images/reservation.png" alt="fast" class="image2"></a>
+      <a href="http://localhost/zwiggy/Frontend/User/PageTemplates/reservation.php"><img src="http://localhost/zwiggy/images/reservation.png" alt="fast" class="image2"></a>
       </div>
         
     

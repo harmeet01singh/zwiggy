@@ -1,3 +1,10 @@
+<?php 
+
+  require('../../../function.php');
+
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +14,11 @@
     <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/header.css">
     <link rel="stylesheet" href="../Css/itemProfile.css">
     <link rel="stylesheet" href="../Css/menu.css">
-    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/rprofile.css"/>
-    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/userprofile.css"/>
+    <link rel="stylesheet" href="../Css/rprofile.css"/>
+    <link rel="stylesheet" href="../Css/userprofile.css"/>
     <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/reservation.css"/>
-    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/cart.css"/>
-    <link rel="stylesheet" href="http://localhost/zwiggy/Frontend/User/Css/feedback.css"/>
+    <link rel="stylesheet" href="../Css/cart.css"/>
+    <link rel="stylesheet" href="../Css/feedback.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
@@ -26,6 +33,16 @@
             <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/feedback.php">About us</a></li>
             <li><a href="http://localhost/zwiggy/Frontend/User/PageTemplates/cart.php">Cart</a></li>
         </ul>
+        
+       
 
-        <button class="logout">Log Out</button>
+            <a href="http://localhost/zwiggy/landing.php" class="logout">logout</a>
+        
+        
+
+
     </header>
+
+    
+
+    
