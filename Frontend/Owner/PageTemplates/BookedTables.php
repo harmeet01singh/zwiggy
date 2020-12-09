@@ -1,11 +1,15 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="BookedTables";
 include("../sidebar.php");
 
-$reservations = $data->query('SELECT * FROM ((reservations INNER JOIN user ON reservations.user_id=user.user_id)INNER JOIN reservation_tables ON reservation_tables.table_id=reservations.table_id)');
+$reservations = $data->getData("SELECT reservations.*, user.username, user.contact FROM reservations, user WHERE reservations.user_id = user.user_id AND reservations.table_id IN (SELECT table_id FROM reservation_tables, hotel as h WHERE reservation_tables.hotel_id=h.hotel_mail AND h.hotel_mail = '{$_SESSION['cor_hotel_id']}')");
 
-// print_r($items);
+// print_r($reservations[0]);
 
 ?>
             <table id="table">

@@ -1,9 +1,12 @@
 <?php 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
 
 $title="Feedback";
 include("../sidebar.php");
 
-$feedbacks = $data->query('SELECT * FROM feedbacks INNER JOIN user on feedbacks.user_id=user.user_id');
+$feedbacks = $data->getData("SELECT feedbacks.*, user.username FROM feedbacks, user WHERE user.user_id=feedbacks.user_id AND hotel_id='{$_SESSION['cor_hotel_id']}'");
 
 // print_r($items);
 

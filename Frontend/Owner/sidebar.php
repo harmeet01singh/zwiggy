@@ -23,12 +23,12 @@
 
             
 
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/home.php">Home</a></li>
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/MenuItems.php">MenuItems</a></li>
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/Orders.php">Orders</a></li>
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/BookedTables.php">BookedTables</a></li>
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/FeedBack.php">Feedback</a></li>
-                <li><a href="http://localhost/zwiggy/Frontend/Owner/PageTemplates/HotelProfile.php">RestaurantProfilePage</a></li>
+                <li><a href="./home.php">Home</a></li>
+                <li><a href="./MenuItems.php">MenuItems</a></li>
+                <li><a href="./Orders.php">Orders</a></li>
+                <li><a href="./BookedTables.php">BookedTables</a></li>
+                <li><a href="./Feedback.php">Feedback</a></li>
+                <li><a href="./HotelProfile.php">RestaurantProfilePage</a></li>
                 
             </ul>
         </div>

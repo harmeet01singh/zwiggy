@@ -1,8 +1,12 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="MenuItems";
 include("../sidebar.php");
-$items = $data->query('SELECT * FROM food_item');
+$items = $data->getData("SELECT * FROM food_item WHERE hotel_id='{$_SESSION['cor_hotel_id']}'");
 
 // print_r($items);
 

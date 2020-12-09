@@ -1,11 +1,18 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="Orders";
 include("../sidebar.php");
 
-$orders = $data->query('SELECT * FROM ((orders INNER JOIN user ON orders.user_id=user.user_id) INNER JOIN food_item ON Food_item.food_id = orders.food_id)');
+// $orders = $data->getData("");
 
-// print_r($items);
+$orders = $data->getData("SELECT orders.*, user.username, user.contact FROM orders, user WHERE orders.user_id = user.user_id AND orders.food_id IN (SELECT food_id FROM food_item, hotel as h WHERE food_item.hotel_id=h.hotel_mail AND h.hotel_mail = '{$_SESSION['cor_hotel_id']}')");
+
+// $orders = $data->getData("");
+// print_r($orders);
 
 ?>
             <table id="table">
@@ -27,7 +34,7 @@ $orders = $data->query('SELECT * FROM ((orders INNER JOIN user ON orders.user_id
                     <td><?php echo $order['username'] ?></td>
                     <td><?php echo $order['user_id'] ?></td>
                     <td><?php echo $order['contact'] ?></td>
-                    <td><?php echo $order['food_name'] ?></td>
+                    <td><?php echo $order['food_id'] ?></td>
                     <td><?php echo $order['quantity'] ?></td>
                     <td><?php echo $order['total_amount'] ?></td>
                     <td><?php echo $order['payment_method'] ?></td>
