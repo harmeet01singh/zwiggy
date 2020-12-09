@@ -1,24 +1,33 @@
 <?php
     $title = 'Item Name';
+    $css = '<link rel="stylesheet" href="../Css/itemProfile.css">';
     include('../header.php');
+
+    if(isset($_GET['fid'])){
+        $query = "SELECT * FROM food_item WHERE food_id='{$_GET['fid']}'";
+        $item = $data->getData($query);
+        $reviews = $data->getData("SELECT * FROM review WHERE food_id='{$_GET['fid']}'");
+        // print_r($item);
+    }
 ?>
     <div class="container">
         <img src="http://localhost/zwiggy/Frontend/User/images/itemImage.jpg" alt="item image" class="image">
         <div class="info">
             <div>
                 <h3>Info</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur cumque assumenda nisi! Ut libero fugit, atque eum debitis deleniti exercitationem.</p>
+                <p><?php echo $item[0]['food_description'] ?></p>
             </div>
             <div>
-                <h3>Price</h3>
+                <h3>Price: <?php echo $item[0]['food_price'] ?></h3>
             </div>
         </div>
         <div class="reviews">
             <div>
                 <h3>Reviews</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quos?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quos?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quos?</p>
+                <?php foreach($reviews as $review) { ?>
+                    <h4>Rating: <?php echo $review['ratings'] ?></h4>
+                    <p><?php echo $review['food_review'] ?></p>
+                <?php } ?>
             </div>
         </div>
     </div>

@@ -1,14 +1,36 @@
 /* Style the tab */
 * {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
+html{
+  min-height: 100%;
+}
 
+body {
+  font-family: "Lato", sans-serif;
+  height: 100%;
+  /* background-color: yellow; */
+}
+
+.mainbody{
+  display: flex;
+  flex-direction: row;
+  min-height: 100% !important;
+  width: 100%;
+  /* background-color: yellowgreen; */
+  
+  /* overflow:hidden; */
+}
+
+.maincon{
+  flex: 85%
+}
 .tab {
-    float: left;
-    border: 1px solid #ccc;
+    /* float: left; */
+    /* border: 4px solid #ccc; */
     background-color: #f44336;
-    width: 15%;
-    height:100%;
+    flex: 15%;
+    min-height: 100%;
     box-shadow: 0px 2px 15px;
+    
   }
   
   /* Style the buttons inside the tab */
@@ -38,16 +60,46 @@ body {font-family: "Lato", sans-serif;}
   }
   
   /* Style the tab content */
+  
   .tabcontent {
     float: left;
     padding: 10px 12px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     width: 85%;
     border-left: none;
     height: 100%;
   }
+  
+  .formcontainer{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 4rem;
+    margin: 5rem 15rem;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
-  input[type=text], select {
+  .flabel{
+    width: 20%;
+  }
+
+  .finput{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+
+  /* input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -65,26 +117,19 @@ body {font-family: "Lato", sans-serif;}
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+  } */
   
-  input[type=submit] {
-    width: 100%;
+  button[type=submit] {
+    width: 40%;
     background-color:  #ba000d;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 1rem 0;
+    margin: 2rem auto;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
-  input[type=submit]:hover {
+  button[type=submit]:hover {
     background-color: #ba000d;
   }
-
-  .formcontainer{
-
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}

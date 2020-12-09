@@ -2,21 +2,21 @@
 <?php 
 
 $title="Profile";
+$css = '<link rel="stylesheet" href="../Css/rprofile.css"/>';
 include("../header.php");
 
-
+if(isset($_GET['hid'])){
+  $query = "SELECT * FROM hotel WHERE hotel_id='{$_GET['hid']}'";
+  $hotel = $data->getData($query);
+  // print_r($hotel);
+}
 ?>
 
-	<a href="http://localhost/zwiggy/images/restaurant1.jpg">
-	<div class="bgimage">
-	<div class="rlogo">
-			<img src="http://localhost/zwiggy/images/rlogo.png" alt="rlogo" class="rlogo" >
-	</div>
+<div class="bgimage">
+  <img src="http://localhost/zwiggy/images/rlogo.png" alt="rlogo" class="rlogo" >
+</div>
 
-	</div>
-	</a>
-
-	<div class="tab">
+<div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Menu')">Menu</button>
   <button class="tablinks" onclick="openTab(event, 'Location')">Location</button>
   <button class="tablinks" onclick="openTab(event, 'Contactus')">Contactus</button>
@@ -47,19 +47,23 @@ include("../header.php");
 
 
 <script>
- function openTab(evt, TabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+  function openTab(evt, TabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    
+    document.getElementById(TabName).style.display = "block";
+    evt.currentTarget.className += " active";
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(TabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+
+  openTab(event, 'Menu');
 </script>
 
 

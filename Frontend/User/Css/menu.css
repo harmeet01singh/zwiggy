@@ -22,16 +22,69 @@
 .menu{
     display: flex;
     flex-direction: row;
-    height: 60vh;
-    background-color: chartreuse;
+    /* height: auto; */
 }
 
 .filtermenu{
-    flex: 15%;
-    background-color: blue;
-    height: 100%;
+    flex: 20%;
+    background-color: #ccc;
+    height: 60vh;
+    padding: 1rem;
+}
+
+.filtermenu > input{
+    /* display: block; */
+    margin: 5px;
 }
 
 .menucard{
-    flex: 85%;
+    display: flex;
+    flex: 80%;
+    flex-wrap: wrap;
+    background-color:white;
+    /* margin: 12rem; */
+    justify-content: space-evenly;
+}
+
+.card{
+    /* padding:10px; */
+    width:25%;
+    /* height:30%; */
+    background-color:#fffbfb;
+    margin: 1.5%;
+    display:flex;
+    box-shadow: 0px 1px 10px;
+    display: flex;
+    flex-direction: column;   
+}
+  
+.cardimg img {
+    width:100%;
+    height:auto;
+}
+
+.cardcon{
+    padding: 1rem;
+}
+  
+.cardcon > a{
+    text-decoration: none;
+    color: black;
+}
+
+.cart {
+    border: none;
+    background-color: #f44336;
+    color: white;
+    margin: 1rem 0px;
+    padding: 8px 8px;
+    border-radius: 5px;
+}
+
+.cart:hover{
+    background-color: #ff7961;
+}
+
+.cart:active{
+    background-color: #ba000d;
 }

@@ -1,26 +1,20 @@
 <?php 
 
-  require('../../../function.php');
-
-  ?>
-
+    require('../../../function.php');
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="../Css/itemProfile.css">
-    <link rel="stylesheet" href="../Css/menu.css">
-    <link rel="stylesheet" href="../Css/rprofile.css"/>
-    <link rel="stylesheet" href="../Css/userprofile.css"/>
-    <link rel="stylesheet" href="../Css/reservation.css"/>
-    <link rel="stylesheet" href="../Css/cart.css"/>
-    <link rel="stylesheet" href="../Css/feedback.css"/>
+    <?php echo $css; ?>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    
     <title><?php echo $title; ?></title>
 </head>
 <body>
@@ -48,24 +42,19 @@
                 </a>
             </li>
         </ul>
-        
-       
 
-            <a href="http://localhost/zwiggy/landing.php" class="logout">logout</a>
-        
-        
-
-
+        <?php if(isset($_SESSION['uname'])) { ?>
+            <div class="dropdown">
+                <button class="dropbtn" style="font-size: 20px"><strong><?php echo $_SESSION['uname']; ?></strong>
+                    <img src="../images/down arrow.png"></img>
+                </button>
+                <div class="dropdown-content">
+                    <a href="userprofile.php">Profile</a>
+                    <?php if(isset($_SESSION['role'])) { ?>
+                        <a href="../../Admin/PageTemplates/home.php"><?php echo $_SESSION['role']; ?> Panel</a>
+                    <?php } ?>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+        <?php } ?>
     </header>
-
-    
-
-<<<<<<< HEAD
-        <button class="logout" style="display: flex;">
-            <p>Log Out</p>
-            <span class="material-icons">login</span>
-        </button>
-    </header>
-=======
-    
->>>>>>> e565a61312dc5c9618c13f1cd9d4338c319cdcff

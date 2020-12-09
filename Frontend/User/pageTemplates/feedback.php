@@ -2,6 +2,7 @@
 <?php 
 
 $title="AboutUs";
+$css = '<link rel="stylesheet" href="../Css/feedback.css"/>';
 include("../header.php");
 
 // print_r($users);
