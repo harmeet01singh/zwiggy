@@ -10,19 +10,19 @@ if (isset($_POST['uname'])) {
 
 
         $password = md5($password);
-        $result = $data->getData("SELECT username FROM user WHERE `username`='$username' AND `password`='$password'");
+        $result = $data->getData("SELECT * FROM user WHERE `username`='$username' AND `password`='$password'");
 
         if(count($result) === 1){
+
+            session_start();
+            $_SESSION['uid'] = $result[0]['user_id'];
+            $_SESSION['uname'] = $result[0]['username'];
+            $_SESSION['role'] = $result[0]['role'];
+            $_SESSION['cor_hotel_id'] = $result[0]['cor_hotel_id'] ? $result[0]['cor_hotel_id']: 'NA';
+            // print_r($result[0]);
+            // print_r($_SESSION['uname']);
             echo '<script> location.href = "Frontend/User/pageTemplates/menu.php" </script>';
         }
-    
-        // if (mysqli_num_rows($resultss) == 1) {
-        // $_SESSION['user_id'] = $userid;
-        // $_SESSION['success'] = "You are now logged in";
-        // header('location: menu.php');
-        // }else {
-        //     array_push($errors, "Wrong username/password combination");
-        // }
     
 }
 ?>
