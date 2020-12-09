@@ -3,7 +3,7 @@
 $title="HotelInfo";
 include("../sidebar.php");
 
-$hotels = $data->query('SELECT * FROM hotel');
+$hotels = $data->getData('SELECT * FROM hotel');
 
 // print_r($users);
 
