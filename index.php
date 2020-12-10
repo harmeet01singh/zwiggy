@@ -24,7 +24,7 @@
             <form class="modal-content animate" method="post" action="login.php">
                 <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> 
-                    <img src="http://localhost/zwiggy/images/login.png" alt="" class="avatar">
+                    <img src="./images/login.png" alt="" class="avatar">
                 </div>
 
                 <div class="container">
