@@ -13,7 +13,7 @@ class DB
 
     public function __construct()
     {
-        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
+        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname, 3306);
         if ($this->conn->connect_error) {
             echo "Connection failed: " . $this->conn->connect_error;
         }
