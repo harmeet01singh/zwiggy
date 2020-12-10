@@ -4,9 +4,9 @@ class DB
 {
   //Databse Connection
 
-    protected $servername = "localhost";
-    protected $username = "root";
-    protected $password = "password";
+    protected $servername = "database-2.cvjx5pxclqbm.us-east-2.rds.amazonaws.com";
+    protected $username = "admin";
+    protected $password = "harmeet2001";
     protected $dbname = "zwiggy";
 
     public $conn = null;
