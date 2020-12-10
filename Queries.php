@@ -21,7 +21,7 @@ class Queries
             $resultArray[] = $data;
         }
         if(!$result){
-            echo $this->db->conn->error;
+            return $this->db->conn->error;
         }else{
             return $result;
         }
