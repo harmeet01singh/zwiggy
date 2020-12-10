@@ -20,8 +20,11 @@ class Queries
         while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $resultArray[] = $data;
         }
-
-        return $resultArray;
+        if(!$result){
+            echo $this->db->conn->error;
+        }else{
+            return $result;
+        }
     }
 
     public function insertData($query)
