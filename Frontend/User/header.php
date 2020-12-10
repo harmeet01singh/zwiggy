@@ -46,7 +46,7 @@
         <?php if(isset($_SESSION['uname'])) { ?>
             <div class="dropdown">
                 <button class="dropbtn" style="font-size: 20px"><strong><?php echo $_SESSION['uname']; ?></strong>
-                    <img src="../images/down arrow.png"></img>
+                    <span class="material-icons" style="transform: rotate(180deg); position: absolute; bottom: 5;">eject</span>
                 </button>
                 <div class="dropdown-content">
                     <a href="userprofile.php">Profile</a>

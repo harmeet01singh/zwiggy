@@ -4,7 +4,7 @@
     $title="Reservation";
     $css = '<link rel="stylesheet" href="../Css/reservation.css"/>';
     include("../header.php");
-    $reservations = $data->getData('SELECT r.*, h.hotel_name FROM reservation_tables as r, hotel as h WHERE r.hotel_id = h.hotel_id');
+    $reservations = $data->getData('SELECT r.*, h.hotel_name FROM reservation_tables as r, hotel as h WHERE r.hotel_id = h.hotel_mail');
 
     // print_r($reservations[0])
     ?>
@@ -31,9 +31,9 @@
             </div>
                 
                 <div id="<?php echo $reservation['table_id'] ?>" class="modal">
-                    <span onclick="document.getElementById('<?php echo $reservation['table_id'] ?>').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                     <form class="modal-content" action="/action_page.php">
+                        <span onclick="document.getElementById('<?php echo $reservation['table_id'] ?>').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <div class="container">
                         
                             <label for="email"><b>User Id:</b></label>

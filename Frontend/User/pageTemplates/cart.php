@@ -3,7 +3,7 @@
 $title="Cart";
 $css = '<link rel="stylesheet" href="../Css/cart.css"/>';
 include("../header.php");
-$carts = $data->getData('SELECT * FROM ((orders INNER JOIN food_item ON orders.food_id=food_item.food_id )INNER JOIN hotel ON food_item.hotel_id=hotel.hotel_id )ORDER BY order_date desc');
+$carts = $data->getData('SELECT * FROM ((orders INNER JOIN food_item ON orders.food_id=food_item.food_id )INNER JOIN hotel ON food_item.hotel_id=hotel.hotel_mail )ORDER BY order_date desc');
 
 
 //  print_r($cart);

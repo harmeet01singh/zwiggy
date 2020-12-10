@@ -13,7 +13,7 @@
     /* width: 400px; */
     color: rgba(0, 0, 0, 0.87);
     font-size: 0.875rem;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Comfortaa", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.43;
     letter-spacing: 0.01071em;
@@ -27,14 +27,19 @@
 
 .filtermenu{
     flex: 20%;
-    background-color: #ccc;
+    background-color: #f44336;
     height: 60vh;
     padding: 1rem;
 }
 
-.filtermenu > input{
+.filtermenu > label{
     /* display: block; */
     margin: 5px;
+    padding: 10px;
+}
+
+.filtermenu > label > input {
+    padding: 10px;
 }
 
 .menucard{
@@ -74,11 +79,17 @@
 
 .cart {
     border: none;
+    border-radius: 50%;
     background-color: #f44336;
     color: white;
-    margin: 1rem 0px;
-    padding: 8px 8px;
-    border-radius: 5px;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    left: 60%;
+    bottom: 108px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0, 0.5); */
+
+    /* top: 0;  */
 }
 
 .cart:hover{
@@ -86,5 +97,22 @@
 }
 
 .cart:active{
+    background-color: #ba000d;
+}
+
+.order {
+    border: none;
+    background-color: #f44336;
+    color: white;
+    margin: 1rem 0px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.order:hover{
+    background-color: #ff7961;
+}
+
+.order:active{
     background-color: #ba000d;
 }
