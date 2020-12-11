@@ -4,7 +4,7 @@ class DB
 {
   //Databse Connection
 
-    protected $servername = "database-2.cvjx5pxclqbm.us-east-2.rds.amazonaws.com";
+    protected $servername = "database-1.ck7l3hrhkiiu.ap-south-1.rds.amazonaws.com";
     protected $username = "admin";
     protected $password = "harmeet2001";
     protected $dbname = "zwiggy";
