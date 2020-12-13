@@ -8,12 +8,12 @@ $cat = $data->getData("SELECT * FROM categories");
 
 if(isset($_POST['fid'])){
     
-    $data->insertData("INSERT INTO `food_item` ( `food_name`, `food_image`, `food_price`, `offer`, `food_description`, `hotel_id`, `category_id`) VALUES ('{$_POST['fname']}', '{$_POST['fimg']}', '{$_POST['fprice']}', '{$_POST['offer']}', '{$_POST['info']}', '{$_SESSION['cor_hotel_id']}', '{$_POST['cat']}' )");
+    $accept = $data->insertData("INSERT INTO `food_item` ( `food_name`, `food_price`, `offer`, `food_description`, `hotel_id`, `category_id`) VALUES ('{$_POST['fname']}', '{$_POST['fprice']}', '{$_POST['offer']}', '{$_POST['info']}', '{$_SESSION['cor_hotel_id']}', '{$_POST['cat']}' )");
 
-    $accept = $data->updateData("UPDATE `hotel` SET `approved` = '1' WHERE `hotel`.`hotel_id` = '{$_POST['hid']}' ");
-    if($accept){
-        echo '<script>alert("Success")</script>';
-    }
+    // $accept = $data->updateData("UPDATE `hotel` SET `approved` = '1' WHERE `hotel`.`hotel_id` = '{$_POST['hid']}' ");
+    // if($accept){
+        echo $accept;
+    // }
 }
 
 if(isset($_POST['foodid'])){
