@@ -1,4 +1,5 @@
 <?php 
+$css = '<link></link>';
 
 $title="HotelProfile";
 include("../sidebar.php")

@@ -55,11 +55,13 @@ header > h2 {
     flex: 85%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 5%;
+    /* justify-content: center; */
 }
     input[type=text], select {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -68,7 +70,7 @@ header > h2 {
     box-sizing: border-box;
   }
 
-  input[type=time], select {
+  input[type=time] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -99,6 +101,45 @@ header > h2 {
   background-color: #f2f2f2;
   padding: 20px;
 }
-  
-  
-  
+
+.create{
+    width: 85%;
+}
+
+.create > button{
+    border: none;
+    display: block;
+    margin: 1rem 1rem 1rem auto;
+    background-color: blueviolet;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 2rem;
+}
+
+.create > button:hover{
+    background-color: rgb(149, 66, 226);
+}
+
+.create > button:active {
+    background-color: rgb(118, 0, 228);
+}
+
+.btn{
+    border: none;
+    /* display: block; */
+    margin: 1rem;
+    background-color: #f44336;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 2rem !important;
+}
+
+.btn:hover{
+    background-color:#ff7961 !important;
+    color: white !important;
+}
+
+.btn:active {
+    background-color:#ba000d !important;
+    color: white !important;
+}

@@ -30,10 +30,11 @@ if (isset($_POST['adduserid'])) {
 
     $password = md5($password);
     
-    echo '<p>Check 1</p>';
+    // echo '<p>Check 1</p>';
 
-    $data->insertData("INSERT INTO `user`(`user_id`, `username`, `password`, `address_1`, `address_2`, `city`, `postal_code`, `contact`, `account_no`) VALUES ('$userid','$username','$password','$address1','$address2', 'Mumbai','$postalcode','$phonenumber','$accountnumber')");
+    $s = $data->insertData("INSERT INTO `user`(`user_id`, `username`, `password`, `address_1`, `address_2`, `city`, `postal_code`, `contact`, `account_no`) VALUES ('$userid','$username','$password','$address1','$address2', 'Mumbai','$postalcode','$phonenumber','$accountnumber')");
     
+    echo $s;
     // $_SESSION['username'] = $username;
     // $_SESSION['success'] = "YOU ARE LOGGED IN";
     

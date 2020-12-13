@@ -1,12 +1,21 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="BookedTables";
 include("../sidebar.php");
 
-$reservations = $data->query('SELECT * FROM ((reservations INNER JOIN user ON reservations.user_id=user.user_id)INNER JOIN reservation_tables ON reservation_tables.table_id=reservations.table_id)');
+$reservations = $data->getData("SELECT reservations.*, user.username, user.contact FROM reservations, user WHERE reservations.user_id = user.user_id AND reservations.table_id IN (SELECT table_id FROM reservation_tables, hotel as h WHERE reservation_tables.hotel_id=h.hotel_mail AND h.hotel_mail = '{$_SESSION['cor_hotel_id']}')");
 
-// print_r($items);
-
+if(isset($_POST['id'])){
+    
+    $s = $data->updateData("UPDATE `reservations` SET `status`='{$_POST['stat']}' WHERE `reservation_id`={$_POST['id']} ");
+    if($s){
+        echo $s;
+    }
+}
 ?>
             <table id="table">
                 <tr>
@@ -29,12 +38,13 @@ $reservations = $data->query('SELECT * FROM ((reservations INNER JOIN user ON re
                     <td><?php echo $reservation['table_id'] ?></td>
                     <td><?php echo $reservation['status'] ?></td>
                     
-                    <td><form>
-  
-                            <select id="mySelect">
-                            <option value="dd1">Approved</option>
-                            <option value="dd2">Rejected</option>
+                    <td><form method="POST" action="">
+                            <input type="text" name="id" style="display: none;" value="<?php echo $reservation['reservation_id'] ?>">
+                            <select id="mySelect" name="stat">
+                                <option value="A">Approved(A)</option>
+                                <option value="R">Rejected(R)</option>
                             </select>
+                            <button type="submit" class="update">Update</button>
                         </form>
                     </td>
                     

@@ -1,5 +1,9 @@
 <?php 
     require('../../../function.php');
+    session_start();
+    if($_SESSION['role'] !== 'admin'){
+        echo '<script>location.href = "../../User/pageTemplates/menu.php"</script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

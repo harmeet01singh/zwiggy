@@ -1,26 +1,20 @@
-#table {
+.table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 90%;
-    position:absolute;
-    top:10%;
-    margin-left:5%;
-    margin-right:5%;
-
-    
-
+    width: 80%;
+    margin: 5% auto;
   }
   
-  #table td, #table th {
+  .table td, .table th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #table tr:nth-child(even){background-color: #f2f2f2;}
+  .table tr:nth-child(even){background-color: #f2f2f2;}
   
-  #table tr:hover {background-color: #ddd;}
+  .table tr:hover {background-color: #ddd;}
   
-  #table th {
+  .table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -31,7 +25,7 @@
 
   }
 
-  #table td button{
+  .table td button{
     background-color:#ba000d;
     color:white;
     text-align: center;
@@ -42,7 +36,7 @@
     padding:2px;
   }
 
-  #table td button:hover{
+  .table td button:hover{
     background-color:white;
     color:black;
     text-align: center;

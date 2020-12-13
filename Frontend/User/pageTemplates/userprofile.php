@@ -1,17 +1,34 @@
 <?php 
 
+#session_start();
+
 $title="UserProfile";
 $css = '<link rel="stylesheet" href="../Css/userprofile.css"/>';
 include("../header.php");
 
 if(isset($_POST['email'])){
-  // print_r($_POST);
-}
 
-if(isset($_FILES['cimage'])){
-  // print_r($_FILES['cimage']);
+  $data->uodateData("UPDATE `user` SET `role` = `pending`, `cor_hotel_id`=  '{$_POST['email']}' WHERE `user_id`='{$_SESSION['usid']}' ");
 
-  move_uploaded_file( $_FILES['cimage']['tmp_name'], 'upload/'.$_FILES['cimage']['name']);
+    if(isset($_FILES['cimage']) and isset($_FILES['pimage']) ){
+
+        $cloc = '../../upload/covers/'.$_FILES['cimage']['name'];
+        $ploc = '../../upload/profiles/'.$_FILES['pimage']['name'];
+        
+        $covsuc = move_uploaded_file( $_FILES['cimage']['tmp_name'], $cloc);
+        $prosuc = move_uploaded_file( $_FILES['pimage']['tmp_name'], $ploc);
+
+        if( $covsuc && $prosuc){
+            $s = $data->insertData("INSERT INTO `hotel`(`hotel_mail`, `approved`, `hotel_name`, `hotel_address_1`, `hotel_address_2`, `hotel_city`, `hotel_postal_code`, `hotel_contact`, `hotel_description`, `cover_image`, `profile_image` ) VALUES 
+            ( '{$_POST['email']}', 0, '{$_POST['rname']}', '{$_POST['addr1']}', '{$_POST['addr2']}', '{$_POST['city']}', '{$_POST['postal']}', '{$_POST['contact']}', '{$_POST['info']}', '{$cloc}', '{$ploc}' ) ");
+
+            if($s){
+                echo '<script>alert("Success")</script>';
+            }
+        }else{
+            echo $covsuc.' '.$prosuc;
+        }
+    }
 }
 
 ?>
@@ -46,28 +63,34 @@ if(isset($_FILES['cimage'])){
         <div class="formcontainer">
           <form class="form" enctype="multipart/form-data" action="" method="POST">
             <label class="flabel" for="email">Email:</label>
-            <input class="finput" type="text" id="email" name="email" placeholder="Your Restaurant Email">
+            <input class="finput" required type="text" id="email" name="email" placeholder="Your Restaurant Email">
           
             <label class="flabel" for="rname"> Name:</label>
-            <input class="finput" type="text" id="rname" name="rname" placeholder="Your Restaurant name">
+            <input class="finput" required type="text" id="rname" name="rname" placeholder="Your Restaurant name">
 
-            <label class="flabel" for="addr">Address:</label>
-            <input class="finput" type="text" id="addr" name="addr" placeholder="Your Restaurant Address">
+            <label class="flabel" for="addr">Building address:</label>
+            <input class="finput" required type="text" id="addr1" name="addr1" placeholder="Your Restaurant Address">
+
+            <label class="flabel" for="addr">Street address:</label>
+            <input class="finput" required type="text" id="addr2" name="addr2" placeholder="Your Street Address">
             
             <label class="flabel" for="contact">Contact:</label>
-            <input class="finput" type="text" id="contact" name="contact" placeholder="Your Contact No.">
+            <input class="finput" required type="text" id="contact" name="contact" placeholder="Your Contact No.">
 
-            <label class="flabel" for="desc">Description:</label>
-            <textarea class="finput" id="info" name="desc" placeholder="Your Restaurant Description"></textarea>
+            <label class="flabel" for="postal">Postal Code:</label>
+            <input class="finput" required type="tel" id="postal" name="postal" placeholder="Postal code">
+
+            <label class="flabel" for="city">Postal Code:</label>
+            <input class="finput" required type="text" id="city" name="city" placeholder="City">
+
+            <label class="flabel" for="info">Description:</label>
+            <textarea class="finput" required id="info" name="info" placeholder="Your Restaurant Description"></textarea>
 
             <label class="flabel" for="cimage">Cover Image:</label>
-            <input class="finput" type="file" id="cimage" name="cimage">
+            <input class="finput" required type="file" id="cimage" name="cimage">
 
             <label class="flabel" for="pimage">Profile Image:</label>
-            <input class="finput" type="file" id="pimage" name="pimage">
-
-            <label class="flabel" for="blogo">Brand Logo:</label>
-            <input class="finput" type="file" id="blogo" name="blogo">
+            <input class="finput" required type="file" id="pimage" name="pimage">
 
             <button type="submit">Submit</button>
           </form>

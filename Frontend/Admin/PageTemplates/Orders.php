@@ -3,7 +3,7 @@
 $title="Orders";
 include("../sidebar.php");
 
-$orders = $data->getData("SELECT * FROM orders");
+$orders = $data->getData("SELECT * FROM orders ORDER BY order_date DESC");
 
 ?>
 
@@ -18,7 +18,7 @@ $orders = $data->getData("SELECT * FROM orders");
                 <tbody>
                     <?php foreach($orders as $order) { ?>
                         <tr class="rows">
-                            <td><?php echo $order['order_id'] ?></td>
+                            <td><?php echo $order['user_id'] ?></td>
                             <td><?php echo $order['quantity'] ?></td>
                             <td>Rs. <?php echo $order['total_amount'] ?></td>
                         </tr>

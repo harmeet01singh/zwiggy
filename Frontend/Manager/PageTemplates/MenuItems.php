@@ -1,8 +1,12 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="MenuItems";
 include("../sidebar.php");
-$items = $data->query('SELECT * FROM food_item');
+$items = $data->getData("SELECT * FROM food_item WHERE hotel_id='{$_SESSION['cor_hotel_id']}'");
 
 // print_r($items);
 
@@ -14,8 +18,6 @@ $items = $data->query('SELECT * FROM food_item');
                     <th>Food Price</th>
                     <th>Offer</th>
                     <th>Description</th>
-                    <th>Edit</th>
-                    <th>Remove</th>
                 </tr>
                 <?php foreach($items as $item) { ?>
                 <tr>
@@ -24,8 +26,6 @@ $items = $data->query('SELECT * FROM food_item');
                     <td><?php echo $item['food_price'] ?></td>
                     <td><?php echo $item['offer'] ?></td>
                     <td><?php echo $item['food_description'] ?></td>
-                    <td><button>Edit</button></td>
-                    <td><button>Remove</button></td>
                 </tr>
                 <?php } ?>
             </table>
@@ -35,3 +35,6 @@ $items = $data->query('SELECT * FROM food_item');
     </div>
 </body>
 </html>
+
+
+

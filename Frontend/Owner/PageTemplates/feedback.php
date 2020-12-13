@@ -1,7 +1,5 @@
 <?php 
-session_start();
-
-$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+$css = '<link></link>';
 
 $title="Feedback";
 include("../sidebar.php");

@@ -23,16 +23,16 @@ class Queries
         if(!$result){
             return $this->db->conn->error;
         }else{
-            return $result;
+            return $resultArray;
         }
     }
 
     public function insertData($query)
     {
         $result = $this->db->conn->query($query);
-        echo '<p>Check 2</p>';
+        // echo '<p>Check 2</p>';
         if(!$result){
-            echo $this->db->conn->error;
+            return $this->db->conn->error;
         }else{
             return $result;
         }
@@ -42,14 +42,22 @@ class Queries
     {
         $result = $this->db->conn->query($query);
 
-        return $result;
+        if(!$result){
+            return $this->db->conn->error;
+        }else{
+            return $result;
+        }
     }
 
     public function deleteData($query)
     {
         $result = $this->db->conn->query($query);
 
-        return $result;
+        if(!$result){
+            return $this->db->conn->error;
+        }else{
+            return $result;
+        }
     }
 }
 

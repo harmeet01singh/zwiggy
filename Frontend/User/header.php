@@ -50,9 +50,16 @@
                 </button>
                 <div class="dropdown-content">
                     <a href="userprofile.php">Profile</a>
-                    <?php if(isset($_SESSION['role'])) { ?>
-                        <a href="../../Admin/PageTemplates/home.php"><?php echo $_SESSION['role']; ?> Panel</a>
+                    <?php if($_SESSION['role'] === 'admin') { ?>
+                        <a href="../../Admin/PageTemplates/home.php">Admin Panel</a>
                     <?php } ?>
+                    <?php if($_SESSION['role'] === 'owner') { ?>
+                        <a href="../../Owner/PageTemplates/home.php">Owner Panel</a>
+                    <?php } ?>
+                    <?php if($_SESSION['role'] === 'manager') { ?>
+                        <a href="../../Manager/PageTemplates/home.php">Manager Panel</a>
+                    <?php } ?>
+                    <a href="history.php">Order History</a>
                     <a href="logout.php">Logout</a>
                 </div>
             </div>

@@ -1,11 +1,23 @@
 <?php 
 
+session_start();
+
+$_SESSION['cor_hotel_id'] = 'retha.greenholt@rueckerblock.com';
+
 $title="Orders";
 include("../sidebar.php");
 
-$orders = $data->query('SELECT * FROM ((orders INNER JOIN user ON orders.user_id=user.user_id) INNER JOIN food_item ON Food_item.food_id = orders.food_id)');
+// $orders = $data->getData("");
 
-// print_r($items);
+$orders = $data->getData("SELECT orders.*, user.username, user.contact FROM orders, user WHERE orders.user_id = user.user_id AND orders.food_id IN (SELECT food_id FROM food_item, hotel as h WHERE food_item.hotel_id=h.hotel_mail AND h.hotel_mail = '{$_SESSION['cor_hotel_id']}')");
+
+if(isset($_POST['id'])){
+    
+    $s = $data->updateData("UPDATE `orders` SET `status`='{$_POST['stat']}' WHERE `order_id`={$_POST['id']} ");
+    if($s){
+        echo $s;
+    }
+}
 
 ?>
             <table id="table">
@@ -17,7 +29,7 @@ $orders = $data->query('SELECT * FROM ((orders INNER JOIN user ON orders.user_id
                     <th>Food Item</th>
                     <th>Quantity</th>
                     <th>Total Amount</th>
-                    <th>Delivery Mode</th>
+                    <th>Payment Mode</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -27,19 +39,20 @@ $orders = $data->query('SELECT * FROM ((orders INNER JOIN user ON orders.user_id
                     <td><?php echo $order['username'] ?></td>
                     <td><?php echo $order['user_id'] ?></td>
                     <td><?php echo $order['contact'] ?></td>
-                    <td><?php echo $order['food_name'] ?></td>
+                    <td><?php echo $order['food_id'] ?></td>
                     <td><?php echo $order['quantity'] ?></td>
                     <td><?php echo $order['total_amount'] ?></td>
                     <td><?php echo $order['payment_method'] ?></td>
                     <td><?php echo $order['status'] ?></td>
-                    <td><form>
-  
-                            <select id="mySelect">
-                            <option value="dd1">Order Placed</option>
-                            <option value="dd2">Canceled</option>
-                            <option value="dd3">Dispatched</option>
-                            <option value="dd4">Delivered</option>
+                    <td><form method="POST" action="">
+                            <input type="text" name="id" style="display: none;" value="<?php echo $order['order_id'] ?>">
+                            <select id="mySelect" name="stat">
+                                <option value="P">Order Placed(P)</option>
+                                <option value="C">Canceled(C)</option>
+                                <option value="D">Dispatched(D)</option>
+                                <option value="S">Delivered(S)</option>
                             </select>
+                            <button type="submit" class="update">Update</button>
                         </form>
                     </td>
                     
