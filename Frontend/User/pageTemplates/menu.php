@@ -39,7 +39,7 @@
                     <div class="card">
                         
                         <div class="cardimg">
-                            <a href="./itemProfile.php?fid=<?php echo $item['food_id'] ?> "><img src="../../<?php echo $item['food_image'] ?>" alt="item image" class="" onclick="document.getElementById('<?php echo $item['food_name'] ?>').style.display='block'"></a>
+                            <a href="./itemProfile.php?fid=<?php echo $item['food_id'] ?> "><img src="../../upload/items/itemImage.jpg" alt="item image" class="" onclick="document.getElementById('<?php echo $item['food_name'] ?>').style.display='block'"></a>
                         </div>
                         
                         <div class="cardcon">
