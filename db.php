@@ -4,10 +4,10 @@ class DB
 {
   //Databse Connection
 
-    protected $servername = "database-1.ck7l3hrhkiiu.ap-south-1.rds.amazonaws.com";
-    protected $username = "admin";
-    protected $password = "harmeet2001";
-    protected $dbname = "zwiggy";
+    protected $servername = "sql12.freesqldatabase.com";
+    protected $username = "sql12386150";
+    protected $password = "CSCDSdXaCZ";
+    protected $dbname = "sql12386150";
 
     public $conn = null;
 
