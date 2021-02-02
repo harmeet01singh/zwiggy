@@ -4,10 +4,10 @@ class DB
 {
   //Databse Connection
 
-    protected $servername = "sql12.freesqldatabase.com";
-    protected $username = "sql12386150";
-    protected $password = "CSCDSdXaCZ";
-    protected $dbname = "sql12386150";
+    protected $servername = "freedb.tech";
+    protected $username = "freedbtech_zwiggy_admin";
+    protected $password = "harmeet2001";
+    protected $dbname = "freedbtech_zwiggy";
 
     public $conn = null;
 
